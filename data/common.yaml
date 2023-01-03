@@ -1,0 +1,12 @@
+---
+patch::default::backup: false
+patch::default::loose: true
+
+patch::package::git: git
+patch::package::patch: patch
+patch::package::manage: true
+
+patch::cache::directory: "%{puppet_vardir}/patch"
+patch::cache::mode: '0640'
+patch::cache::owner: root
+patch::cache::group: root
