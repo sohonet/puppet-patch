@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Description](#description)
-1. [Usage - Configuration options and additional functionality](#usage)
+1. [Usage](#usage)
 
 ## Description
 
@@ -13,9 +13,9 @@ Apply a [diff] using the [patch] command.
 
 ```puppet
 patch { 'patch vendor templates':
-  target => '/opt/application/templates',
-  source => file("${module_name}/vendor.patch"),
-  strip  => 1,
+  target  => '/opt/application/templates',
+  content => file("${module_name}/vendor.patch"),
+  strip   => 1,
 }
 ```
 
