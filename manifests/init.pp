@@ -64,7 +64,7 @@ define patch (
     owner        => $patch::cache::owner,
     group        => $patch::cache::group,
     mode         => $patch::cache::mode,
-    validate_cmd => sprintf('/usr/bin/env patch --dry-run %s %s --forward --strip %s < %%', $loose_option, $backup_option, $strip),
+    validate_cmd => sprintf('/usr/bin/env patch -d %s --dry-run %s %s --forward --strip %s < %%', $target, $loose_option, $backup_option, $strip),
   }
 
   -> exec { "${title}.patch":
